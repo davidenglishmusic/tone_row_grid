@@ -15,4 +15,8 @@ class RowComposer
     [10, 'bb'],
     [11, 'b']
   ].freeze
+
+  def self.generate_random_row
+    Row.new(TONES.shuffle.map { |tone| tone[0] })
+  end
 end
