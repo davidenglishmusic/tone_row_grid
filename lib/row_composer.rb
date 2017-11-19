@@ -19,4 +19,8 @@ class RowComposer
   def self.generate_random_row
     Row.new(TONES.shuffle.map { |tone| tone[0] })
   end
+
+  def self.retrograde(row)
+    Row.new(row.row.reverse)
+  end
 end
