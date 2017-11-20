@@ -36,4 +36,8 @@ class RowComposer
     end
     Row.new(inverse)
   end
+
+  def self.retrograde_inverse(row)
+    Row.new((retrograde(inverse(row)).row))
+  end
 end
