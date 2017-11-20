@@ -14,4 +14,11 @@ RSpec.describe RowComposer do
       expect(RowComposer.retrograde(row).row).to eql [0, 4, 5, 10, 1, 8, 9, 6, 2, 3, 11, 7]
     end
   end
+
+  describe '#inverse' do
+    it 'returns the inverse of a row' do
+      row = Row.new([1, 0, 5, 7, 9, 8, 4, 11, 2, 10, 6, 3])
+      expect(RowComposer.inverse(row).row).to eql [1, 2, 9, 7, 5, 6, 10, 3, 0, 4, 8, 11]
+    end
+  end
 end
