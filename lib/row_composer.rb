@@ -25,16 +25,15 @@ class RowComposer
   end
 
   def self.inverse(row)
-    inverse = [row.row.first]
-
+    inversed_row = [row.row.first]
     next_note = row.row.first
     row.interval_sequence.each do |interval|
       next_note -= interval
       next_note += 12 if next_note.negative?
       next_note -= 12 if next_note >= 12
-      inverse.push(next_note)
+      inversed_row.push(next_note)
     end
-    Row.new(inverse, :i)
+    Row.new(inversed_row, :i)
   end
 
   def self.retrograde_inverse(row)
