@@ -43,4 +43,13 @@ RSpec.describe RowComposer do
       expect(RowComposer.retrograde_inverse(row).label).to eql 'RI2'
     end
   end
+
+  describe '#transpose' do
+    it 'returns the transposed version of the row' do
+      row = Row.new([11, 10, 3, 7, 4, 2, 0, 1, 8, 9, 6, 5])
+      transposed_row = RowComposer.transpose(row, 7)
+      expect(transposed_row.label).to eql 'P7'
+      expect(transposed_row.row).to eql [7, 6, 11, 3, 0, 10, 8, 9, 4, 5, 2, 1]
+    end
+  end
 end
