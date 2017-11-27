@@ -58,4 +58,12 @@ RSpec.describe RowComposer do
       expect(transposed_row.label).to eql 'i6'
     end
   end
+
+  describe '#generate_all_combinations' do
+    it 'generates all combinations for the row' do
+      row = Row.new([4, 1, 10, 5, 11, 3, 2, 6, 0, 8, 7, 9])
+      all_combinations = RowComposer.generate_all_combinations(row)
+      expect(all_combinations.length).to eql 48
+    end
+  end
 end
