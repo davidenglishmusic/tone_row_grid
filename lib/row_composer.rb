@@ -21,7 +21,7 @@ class RowComposer
   end
 
   def self.retrograde(row)
-    Row.new(row.row.reverse)
+    Row.new(row.row.reverse, "R#{row.row.first}")
   end
 
   def self.inverse(row)
@@ -34,10 +34,10 @@ class RowComposer
       next_note -= 12 if next_note >= 12
       inverse.push(next_note)
     end
-    Row.new(inverse)
+    Row.new(inverse, "I#{row.row.first}")
   end
 
   def self.retrograde_inverse(row)
-    Row.new((retrograde(inverse(row)).row))
+    Row.new(retrograde(inverse(row)).row, "RI#{row.row.first}")
   end
 end
