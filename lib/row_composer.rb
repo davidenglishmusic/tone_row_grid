@@ -52,4 +52,15 @@ class RowComposer
     end
     Row.new(transposed_row, row.type)
   end
+
+  def self.generate_all_combinations(row)
+    primes = inverse(row).row.map { |pitch| transpose(row, pitch) }
+
+    all_combinations = [primes]
+    all_combinations.push(primes.map { |prime| retrograde(prime) })
+    all_combinations.push(primes.map { |prime| inverse(prime) })
+    all_combinations.push(primes.map { |prime| retrograde_inverse(prime) })
+
+    all_combinations.flatten
+  end
 end
