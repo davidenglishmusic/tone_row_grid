@@ -1,10 +1,15 @@
 class Row
   attr_accessor :row
-  attr_reader :label
+  attr_reader :type
 
-  def initialize(row, label = "P#{row.first}")
+  def initialize(row, type = :p)
     @row = row
-    @label = label
+    @type = type
+  end
+
+  def label
+    pitch = @type == :p || @type == :i ? row.first : row.last
+    @type.to_s + pitch.to_s
   end
 
   def interval_sequence
