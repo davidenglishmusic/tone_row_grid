@@ -50,6 +50,6 @@ class RowComposer
       next_note -= 12 if next_note >= 12
       transposed_row.push(next_note)
     end
-    Row.new(transposed_row)
+    Row.new(transposed_row, row.type)
   end
 end
