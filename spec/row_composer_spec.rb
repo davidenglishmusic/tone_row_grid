@@ -51,5 +51,11 @@ RSpec.describe RowComposer do
       expect(transposed_row.label).to eql 'p7'
       expect(transposed_row.row).to eql [7, 6, 11, 3, 0, 10, 8, 9, 4, 5, 2, 1]
     end
+
+    it 'returns the correct label for the transposed version of the row' do
+      row = Row.new([10, 11, 3, 1, 4, 2, 5, 0, 7, 6, 8, 9], :i)
+      transposed_row = RowComposer.transpose(row, 6)
+      expect(transposed_row.label).to eql 'i6'
+    end
   end
 end
