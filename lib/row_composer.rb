@@ -40,4 +40,16 @@ class RowComposer
   def self.retrograde_inverse(row)
     Row.new(retrograde(inverse(row)).row, "RI#{row.row.first}")
   end
+
+  def self.transpose(row, starting_pitch)
+    transposed_row = [starting_pitch]
+    next_note = starting_pitch
+    row.interval_sequence.each do |interval|
+      next_note += interval
+      next_note += 12 if next_note.negative?
+      next_note -= 12 if next_note >= 12
+      transposed_row.push(next_note)
+    end
+    Row.new(transposed_row)
+  end
 end
