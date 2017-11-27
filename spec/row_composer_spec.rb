@@ -16,7 +16,7 @@ RSpec.describe RowComposer do
 
     it 'returns the correct label for the retrograde row' do
       row = Row.new([11, 3, 10, 9, 1, 0, 6, 2, 5, 8, 4, 7])
-      expect(RowComposer.retrograde(row).label).to eql 'R11'
+      expect(RowComposer.retrograde(row).label).to eql 'r11'
     end
   end
 
@@ -28,7 +28,7 @@ RSpec.describe RowComposer do
 
     it 'returns the correct label for the inverse row' do
       row = Row.new([2, 6, 7, 4, 3, 1, 0, 11, 9, 5, 8, 10])
-      expect(RowComposer.inverse(row).label).to eql 'I2'
+      expect(RowComposer.inverse(row).label).to eql 'i2'
     end
   end
 
@@ -40,7 +40,7 @@ RSpec.describe RowComposer do
 
     it 'returns the correct label for the retrograde inverse row' do
       row = Row.new([2, 8, 10, 4, 5, 3, 7, 6, 0, 9, 11, 1])
-      expect(RowComposer.retrograde_inverse(row).label).to eql 'RI2'
+      expect(RowComposer.retrograde_inverse(row).label).to eql 'ri2'
     end
   end
 
@@ -48,7 +48,7 @@ RSpec.describe RowComposer do
     it 'returns the transposed version of the row' do
       row = Row.new([11, 10, 3, 7, 4, 2, 0, 1, 8, 9, 6, 5])
       transposed_row = RowComposer.transpose(row, 7)
-      expect(transposed_row.label).to eql 'P7'
+      expect(transposed_row.label).to eql 'p7'
       expect(transposed_row.row).to eql [7, 6, 11, 3, 0, 10, 8, 9, 4, 5, 2, 1]
     end
   end

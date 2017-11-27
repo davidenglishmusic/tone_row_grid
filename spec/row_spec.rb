@@ -11,7 +11,7 @@ RSpec.describe Row do
   describe 'initialization' do
     it 'creates a default label when none is provided' do
       row = Row.new([0, 3, 11, 9, 7, 10, 8, 1, 2, 4, 6, 5])
-      expect(row.label).to eql 'P0'
+      expect(row.label).to eql 'p0'
     end
   end
 end
